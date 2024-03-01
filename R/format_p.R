@@ -12,9 +12,9 @@
 # format p-values
 format_p <- function(x){
   if (is.na(x)) {
-    cat("")
+    ("")
   } else if (x < 0.001) {
-    cat("p < .001")
+    ("p < .001")
   } else {
     stringr::str_remove((round(x, digits = 3)), "^0+")
   }

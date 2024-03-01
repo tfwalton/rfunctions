@@ -12,7 +12,7 @@
 format_num <- function(x) {
   if ((ncol(as.data.frame(x)) > 1 & nrow(as.data.frame(x)) > 1) == TRUE) {
   apply(x, c(1,2), format1)
-  } else {vapply(x, format1, numeric(1))}
+  } else {sapply(x, format1)}
 }
 
 # express numbers in scientific notation or round where necessary

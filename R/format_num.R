@@ -17,8 +17,11 @@ format_num <- function(x) {
 
 # express numbers in scientific notation or round where necessary
 
-format1 <- function(x){
-  if(x == 0) {
+
+format1 <- function(x) {
+  if (is.na(x)) {
+    ""
+  } else if(x == 0) {
     round(x, digits = 0)
   } else if (abs(x) < 0.001) {
     formatC(x, format = "e", digits = 0)

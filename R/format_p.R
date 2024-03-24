@@ -1,12 +1,12 @@
 #' Format p-values
 #'
 #' This function will print p-values according to APA-7 guidelines
-#' @param no arguments necessary
+#' @param suppress.p Select whether to suppress the "p" in the function output (FALSE by default)
 #' @keywords p-value
 #' @export
 #' @examples
 #' values <- c(0.2, 0.035, 0.00021)
-#' vapply(values, format_p, character(1))
+#' format_p(values, suppress.p = TRUE)
 
 format_p <- function(x, suppress.p = FALSE) {
   if ((ncol(as.data.frame(x)) > 1 & nrow(as.data.frame(x)) > 1) == TRUE) {

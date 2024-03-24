@@ -10,12 +10,12 @@
 
 format_p <- function(x, suppress.p = FALSE) {
   if ((ncol(as.data.frame(x)) > 1 & nrow(as.data.frame(x)) > 1) == TRUE) {
-    apply(x, c(1,2), format1, suppress.p = suppress.p)
-  } else {sapply(x, format1, suppress.p = suppress.p)}
+    apply(x, c(1,2), formatp, suppress.p = suppress.p)
+  } else {sapply(x, formatp, suppress.p = suppress.p)}
 }
 
 # format p-values
-format1 <- function(x, suppress.p = FALSE){
+formatp <- function(x, suppress.p = FALSE){
   if (is.na(x)) {
     ("")
   } else if (as.numeric(x) < 0.001) {

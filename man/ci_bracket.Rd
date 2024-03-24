@@ -16,6 +16,7 @@ This function will combine columns from output of the confint function into a si
 lm <- lm(disp~hp, data = mtcars)
 ci <- confint(lm)
 ci_formatted <- ci_bracket(format_num(ci))
+ci_formatted
 }
 \keyword{confidence}
 \keyword{interval}

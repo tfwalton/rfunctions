@@ -7,13 +7,13 @@
 format_p(x)
 }
 \arguments{
-\item{no}{arguments necessary}
+\item{suppress.p}{Select whether to suppress the "p" in the function output (FALSE by default)}
 }
 \description{
 This function will print p-values according to APA-7 guidelines
 }
 \examples{
 values <- c(0.2, 0.035, 0.00021)
-vapply(values, format_p, character(1))
+format_p(values, suppress.p = TRUE)
 }
 \keyword{p-value}

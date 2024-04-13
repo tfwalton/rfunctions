@@ -10,7 +10,7 @@
 
 
 format_num <- function(x) {
-  if ((ncol(as.data.frame(x)) > 1 & nrow(as.data.frame(x)) > 1) == TRUE) {
+  if (dim(as.data.frame(x))[1] > 1 & dim(as.data.frame(x))[2] > 1) {
   apply(x, c(1,2), format1)
   } else {sapply(x, format1)}
 }

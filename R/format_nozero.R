@@ -18,14 +18,14 @@ format_nozero <- function(x) {
 
 
 format2 <- function(x) {
-  if (is.na(x)) {
+  if (is.na(x) | x == "") {
     ""
   } else if(x == 0) {
     round(x, digits = 0)
-  } else if (abs(x) < 0.001) {
+  } else if (abs(as.numeric(x)) < 0.001) {
     formatC(x, format = "e", digits = 0)
-  }  else if (abs(x) < 1) {
-    substr(as.character(round(x, digits = 3)),2,nchar(as.character(round(x, digits = 3))))
+  }  else if (abs(as.numeric(x)) < 1) {
+    substr(round(as.numeric(x), digits = 3),2,nchar(round(as.numeric(x), digits = 3)))
   } else {
     stop("Error: input must be a number < 1")
   }

@@ -25,7 +25,7 @@ format2 <- function(x) {
   } else if (abs(x) < 0.001) {
     formatC(x, format = "e", digits = 0)
   }  else if (abs(x) < 1) {
-    substr(round(x, digits = 3),2,nchar(round(x, digits = 3)))
+    substr(as.character(round(x, digits = 3)),2,nchar(as.character(round(x, digits = 3))))
   } else {
     stop("Error: input must be a number < 1")
   }

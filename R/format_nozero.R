@@ -20,12 +20,12 @@ format_nozero <- function(x) {
 format2 <- function(x) {
   if (is.na(x) | x == "") {
     ""
-  } else if(x == 0) {
+  } else if (x == 0) {
     round(x, digits = 0)
-  } else if (abs(as.numeric(x)) < 0.001) {
-    formatC(x, format = "e", digits = 0)
-  }  else if (abs(as.numeric(x)) < 1) {
+  } else if (as.numeric(x) < 1 & as.numeric(x) > 0) {
     substr(round(as.numeric(x), digits = 3),2,nchar(round(as.numeric(x), digits = 3)))
+  } else if (as.numeric(x) < 0 & as.numeric(x) > -1) {
+    substr(round(as.numeric(x), digits = 3),3,nchar(round(as.numeric(x), digits = 3)))
   } else {
     stop("Error: input must be a number < 1")
   }

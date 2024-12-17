@@ -14,18 +14,16 @@ format_nozero <- function(x) {
   } else {sapply(x, format2)}
 }
 
-# express numbers in scientific notation or round where necessary
 
-
-format2 <- function(x) {
+format2 <- function(x, digit_no = 2) {
   if (is.na(x) | x == "") {
     ""
   } else if (x == 0) {
     round(x, digits = 0)
   } else if (as.numeric(x) < 1 & as.numeric(x) > 0) {
-    substr(round(as.numeric(x), digits = 3),2,nchar(round(as.numeric(x), digits = 3)))
+    substr(round(as.numeric(x), digits = digit_no),2,nchar(round(as.numeric(x), digits = digit_no)))
   } else if (as.numeric(x) < 0 & as.numeric(x) > -1) {
-    paste0("-",substr(round(as.numeric(x), digits = 3),3,nchar(round(as.numeric(x), digits = 3))))
+    paste0("-",substr(round(as.numeric(x), digits = digit_no),3,nchar(round(as.numeric(x), digits = digit_no))))
   } else {
     stop("Error: input must be a number < 1")
   }

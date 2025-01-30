@@ -26,7 +26,7 @@ format1 <- function(x) {
   } else if (abs(x) < 0.001) {
     formatC(x, format = "e", digits = 0)
   }  else if (abs(x) < 1) {
-    round(x, digits = 3)
+    round(x, digits = 2)
   }  else if (abs(x) < 10) {
     round(x, digits = 2)
   } else if (abs(x) < 100) {

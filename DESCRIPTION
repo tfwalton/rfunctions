@@ -2,8 +2,8 @@ Package: pslformat
 Type: Package
 Title: Format numbers according to APA-7
 Version: 0.1.7
-Author: Tom F. Walton
-Maintainer: Tom F. Walton
+Author: Tom F. Walton [aut, cre]
+Maintainer: Tom F. Walton <tomwaltonaes@gmail.com>
 Description: This package formats numbers according to APA-7 guidelines.
 License: MIT
 Encoding: UTF-8

@@ -15,7 +15,7 @@ format_nozero <- function(x) {
 }
 
 
-format2 <- function(x, digit_no = 2) {
+format2 <- function(x, digit_no = 3) {
   if (is.na(x) | x == "") {
     ""
   } else if (x == 0) {
@@ -24,7 +24,13 @@ format2 <- function(x, digit_no = 2) {
     substr(round(as.numeric(x), digits = digit_no),2,nchar(round(as.numeric(x), digits = digit_no)))
   } else if (as.numeric(x) < 0 & as.numeric(x) > -1) {
     paste0("-",substr(round(as.numeric(x), digits = digit_no),3,nchar(round(as.numeric(x), digits = digit_no))))
+  } else if (abs(x) < 10) {
+    sub("\\.?0+$", "", format(round(x, digits = 2)))
+  } else if (abs(x) < 100) {
+    round(x, digits = 1)
+  } else if (abs(x) < 1000) {
+    round(x, digits = 0)
   } else {
-    stop("Error: input must be a number < 1")
+    round(x, digits = 0)
   }
 }

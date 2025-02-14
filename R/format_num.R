@@ -25,10 +25,10 @@ format1 <- function(x, digit_no = 3) {
     round(x, digits = 0)
   } else if (abs(x) < 0.001) {
     formatC(x, format = "e", digits = 0)
-  }  else if (abs(x) < 1) {
+  } else if (abs(x) < 1) {
     sub("\\.?0+$", "", format(round(x, digits = digit_no)))
-  }  else if (abs(x) < 10) {
-    sub("\\.?0+$", "", format(round(x, digits = 2))
+  } else if (abs(x) < 10) {
+    sub("\\.?0+$", "", format(round(x, digits = 2)))
   } else if (abs(x) < 100) {
     round(x, digits = 1)
   } else if (abs(x) < 1000) {

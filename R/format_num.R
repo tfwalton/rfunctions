@@ -1,7 +1,7 @@
 #' Format numbers
 #'
 #' This function will round numbers according to APA7 guidelines and express as scientific notation where necessary
-#' @param No arguments necessary
+#' @param specify number of decimal places for numbers under zero with digits (2 or 3)
 #' @keywords round
 #' @export
 #' @examples

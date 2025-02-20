@@ -9,10 +9,10 @@
 #' format_num(mat)
 
 
-format_num <- function(x) {
+format_num <- function(x, digits = 3) {
   if (dim(as.data.frame(x))[1] > 1 & dim(as.data.frame(x))[2] > 1) {
   apply(x, c(1,2), format1)
-  } else {sapply(x, format1)}
+  } else {sapply(x, format1, digit_no = digits)}
 }
 
 # express numbers in scientific notation or round where necessary

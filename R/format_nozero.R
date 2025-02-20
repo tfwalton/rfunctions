@@ -8,10 +8,10 @@
 #' format_num(0.053634)
 
 
-format_nozero <- function(x) {
+format_nozero <- function(x, digits = 3) {
   if (dim(as.data.frame(x))[1] > 1 & dim(as.data.frame(x))[2] > 1) {
     apply(x, c(1,2), format2)
-  } else {sapply(x, format2)}
+  } else {sapply(x, format2, digit_no = digits)}
 }
 
 

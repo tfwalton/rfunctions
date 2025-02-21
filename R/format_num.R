@@ -11,7 +11,7 @@
 
 format_num <- function(x, digits = 3) {
   if (dim(as.data.frame(x))[1] > 1 & dim(as.data.frame(x))[2] > 1) {
-  apply(x, c(1,2), format1)
+  apply(x, c(1,2), format1, digit_no = digits)
   } else {sapply(x, format1, digit_no = digits)}
 }
 
